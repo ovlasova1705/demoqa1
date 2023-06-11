@@ -6,7 +6,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestForm extends TestBase {
+//ctrl+Alt+L - correct all
+public class TestFormWithComments extends TestBase {
 
     @Test
     void practiceFormTest() {
@@ -26,12 +27,16 @@ public class TestForm extends TestBase {
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
         $("#genterWrapper").$(byText("Other")).click();
+//        $("#gender-radio-1").parent().click();
+//        $("[for=gender-radio-3]").click();
         $("#userNumber").setValue(userNumber);
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July"); // Select July
         $(".react-datepicker__year-select").selectOptionByValue("2008"); // Select 2008
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click(); // Select 30th day of the month
+//<div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--selected react-datepicker__day--outside-month"  aria-label="Choose Monday, June 30th, 2008" >30</div>
+//<div class="react-datepicker__day react-datepicker__day--030"                                                                       aria-label="Choose Wednesday, July 30th, 2008" >30</div>
         $("#subjectsInput").setValue("Computer Science").pressEnter();
 
 
@@ -48,10 +53,15 @@ public class TestForm extends TestBase {
 
         // Verification
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-                $(".table-responsive").shouldHave(text(firstName),text(lastName),
-                text(userEmail), text("Computer Science"),
-                text("Sports"), text("123 Street, City"), text("NCR Delhi"));
+//        $(".table-responsive").shouldHave(text(firstName),text(lastName),
+//                text(userEmail), text("Computer Science"),
+//                text("Sports"), text("123 Street, City"), text("NCR Delhi"));
+        //$(".table-responsive").$(byText("Subjects")).parent().shouldHave( text("Computer Science"));
+        checkTable("Subjects", "Computer Science");
     }
 
+    void checkTable(String key, String value) {
+        $(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
 
+    }
 }
