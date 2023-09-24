@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.CalendarComponent;
 import pages.components.CalendarComponentTestData;
 import pages.components.ResultTableComponent;
 
