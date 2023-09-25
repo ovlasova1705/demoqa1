@@ -40,9 +40,15 @@ tasks.test {
     useJUnitPlatform()
 }
 
-task sample_test(type: Test){
+//task sample_test(type: Test){
+//    useJUnitPlatform{
+//        includeTags("Sample")
+//    }
+//
+//}
+task TestForm(type: Test){
     useJUnitPlatform{
-        includeTags("Sample")
+        includeTags("remote")
     }
 
 }
