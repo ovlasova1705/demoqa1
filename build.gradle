@@ -46,9 +46,14 @@ tasks.test {
 //    }
 //
 //}
-task TestForm(type: Test){
-    useJUnitPlatform{
+task TestForm(type: Test) {
+    useJUnitPlatform {
         includeTags("remote")
     }
+}
 
+task run_with_params(type: Test) {
+    useJUnitPlatform {
+        includeTags("params")
+    }
 }
