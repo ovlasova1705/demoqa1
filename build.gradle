@@ -57,3 +57,10 @@ task run_with_params(type: Test) {
         includeTags("params")
     }
 }
+
+task sample_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("Sample")
+    }
+}
+

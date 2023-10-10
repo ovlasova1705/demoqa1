@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "DemoQA",
+    "environment": "DEV",
+    "comment": "it's fine @olga_mikh",
+    "reportLink": "https://jenkins.autotests.cloud/",
+    "language": "en",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6351568537:AAH8Z0TdAWx1rqm9cP63TzTBoBx_Zp3mYUI",
+    "chat": "-1001894997846",
+    "replyTo": ""
+  }
+}
